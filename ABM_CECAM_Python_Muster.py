@@ -35,7 +35,7 @@ def suitabilitylandscape(index = 0):
         return V
     elif(index == 1):
         im = plt.imread('landmap_matlaberzeugt1.png') # landmap
-        V = lambda y: 10*im[np.min([np.int(y[1]*im.shape[0]/10),im.shape[0]-1]),np.min([np.int(y[0]*im.shape[1]/10),im.shape[1]-1]),1]
+        V = lambda y: 10*im[np.min([np.int((y[1]+2)*im.shape[0]/4),im.shape[0]-1]),np.min([np.int((y[0]+2)*im.shape[1]/4),im.shape[1]-1]),1]
         return V
     elif(index == 2):
         V = lambda y: y[0] # linear
@@ -195,7 +195,7 @@ doublewell = 0
 landmap = 1
 linear = 2
 individual = 3
-V = suitabilitylandscape(doublewell) # V is the selected suitability landscape that is used later on
+V = suitabilitylandscape(landmap) # V is the selected suitability landscape that is used later on
 
 # radius for the determination of the infection rate
 radius = 0.2
